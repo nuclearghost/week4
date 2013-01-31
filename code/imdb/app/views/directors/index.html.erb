@@ -8,6 +8,11 @@
     <%= link_to director.name, director_path(director.id) %>
     |
     <%= link_to "Edit", edit_director_url(director.id) %>
+    |
+    <%= link_to "Toast", director_url(director.id),
+          :method => "delete", :data => { :confirm => "Whoa, really?" } %>
+
+    <!-- <a href="<%#= director_url(director.id) %>">Toast</a> -->
   </li>
 <% end %>
 </ul>
