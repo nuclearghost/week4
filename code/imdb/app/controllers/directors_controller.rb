@@ -1,5 +1,15 @@
 class DirectorsController < ApplicationController
 
+  def edit
+    @director = Director.find_by_id(params[:id])
+  end
+  def update
+    @director = Director.find_by_id(params[:id])
+    @director.name = params[:director][:name]
+    @director.save
+    redirect_to directors_url
+  end
+
   def index
     @directors = Director.all
   end
